@@ -1,0 +1,14 @@
+ int *findTwoElement(int *arr, int n) {
+        long long int *result=new long long int[2];
+       long long int sumN=(n*(n+1))/2;
+       long long int sumNsq=(n*(n+1)*(2*n+1))/6;
+       long long int missin=0 ,repeating=0;
+       for(long long int i=0;i<n;i++){
+           sumN-=(long long int)arr[i];
+           sumNsq-=(long long int)arr[i]*(long long int)arr[i];
+       }
+       missin=(sumN+sumNsq/sumN)/2;
+       repeating=missin-sumN;
+       result[0]=repeating;
+       result[1]=missin;
+    }
